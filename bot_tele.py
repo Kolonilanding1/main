@@ -389,7 +389,7 @@ async def on_startup(app: Application):
     
 # Jalankan bot
 if __name__ == '__main__':
-    app = Application.builder().token(API_TOKEN).build()
+    app = Application.builder().token(os.getenv("BOT_TOKEN")).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(button, pattern="^(claim_freebet|konten_gratis|konten_vip)$"))
